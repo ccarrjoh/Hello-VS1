@@ -18,5 +18,26 @@ namespace MovieNight.Tests
 
             Assert.True(actual.GetType() == expected);
         }
+
+        [Fact]
+        public void Test_MovieVote()
+        {
+            var expected = 1;
+            var sut = new Voting();
+            var actual = sut.Movie;
+
+            Assert.NotNull(actual);
+        }
+
+        [Fact]
+        public void Test_VotingPeople()
+        {
+            var expected = 0;
+            var sut = new Voting();
+            var actual = sut.People;
+
+            Assert.True(typeof(List<Person>) == actual.GetType());
+            Assert.True(expected <= actual.Count);
+        }
     }
 }

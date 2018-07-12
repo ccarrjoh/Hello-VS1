@@ -7,9 +7,15 @@ namespace MovieNight.Library.Models
 {
     public class Person : AModel
     {
+        public History History
+
+        {
+            get;
+            set;
+        }
         public Person()
         {
-
+            History = new History();
         }
     }
 }

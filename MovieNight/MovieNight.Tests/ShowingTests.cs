@@ -12,11 +12,22 @@ namespace MovieNight.Tests
         public void Test_Showing_Id()
         {
             var expected = typeof(Guid);
-            var h = new Showing();
+            var s = new Showing();
 
-            var actual = h.Id;
+            var actual = s.Id;
 
             Assert.True(actual.GetType() == expected);
+        }
+
+        [Fact]
+        public void Test_ShowingMovies()
+        {
+            var expected = 1;
+            var s = new Showing();
+            var actual = s.Movies;
+
+            Assert.True(typeof(List<Movie>) == actual.GetType());
+            Assert.True(actual.Count >= expected);
         }
     }
 }

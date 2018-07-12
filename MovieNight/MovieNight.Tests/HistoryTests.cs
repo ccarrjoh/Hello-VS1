@@ -18,5 +18,17 @@ namespace MovieNight.Tests
 
             Assert.True(actual.GetType() == expected);
         }
+
+        [Fact]
+        public void Test_HistoryMovies()
+        {
+            var expected = 1;
+            var h = new History();
+
+            var actual = h.Movies;
+
+            Assert.True(typeof(List<Movie>) == actual.GetType());
+            Assert.True(actual.Count >= expected);
+        }
     }
 }
